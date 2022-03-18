@@ -212,7 +212,7 @@ px cdk deploy --all -c environment=dev
 
 最終的に以下のようなCloudFormationスタックが作成されました。  
 （Chatbotのスタック作成で失敗していますが、こちらはcdk.jsonの設定で既存パラメータのままCDKを実行したためになります）
-![cloud9-setting13](./pictures/blea-013.png)
+![](/pictures/blea-013.png)
 
 ### 5. お片付け
 最後に環境の片付けを実施します。cdk destroyを使用してCloudFormationスタックを削除します。
