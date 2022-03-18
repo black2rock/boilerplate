@@ -216,7 +216,7 @@ px cdk deploy --all -c environment=dev
 $ cd guest-apiapp-sample/
 $ npx cdk destroy --all -c environment=dev
 
-$ cd guest-apiapp-sample/
+$ cd usecases/base-standalone
 $ npx cdk destroy --all -c environment=dev
 ```
 
