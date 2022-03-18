@@ -27,7 +27,12 @@
 
 | ガバナンスベース（シングルアカウント版）| ゲストシステム（Guest System） |
 |---|---|
-| ・Chatbotの設定　<br> ・AWS Configの設定 <br> ・GuardDuty有効化 <br> ・IAM設定まわり（ポリシー、ロールの作成など）　<br> ・Security Hubの設定 <br> ・CloudTrail証跡の作成 |　・[guest-apiapp-sample](https://github.com/aws-samples/baseline-environment-on-aws/tree/main/usecases/guest-apiapp-sample)（API Gateway+Lambda+DynamoDB構成） <br> ・[guest-webapp-sample](https://github.com/aws-samples/baseline-environment-on-aws/tree/main/usecases/guest-webapp-sample)（AWS ECS/Fargate構成）
+|Chatbotの設定 |[guest-apiapp-sample](https://github.com/aws-samples/baseline-environment-on-aws/tree/main/usecases/guest-apiapp-sample)（API Gateway+Lambda+DynamoDB構成）|
+|AWS Configの設定|[guest-webapp-sample](https://github.com/aws-samples/baseline-environment-on-aws/tree/main/usecases/guest-webapp-sample)（AWS ECS/Fargate構成）|
+|GuardDuty有効化`|-|
+|IAM設定まわり（ポリシー、ロールの作成など）|-|
+|Security Hubの設定|-|
+|CloudTrail証跡の作成|-|
 
 ![tandalone Governance (with Individual account)](https://github.com/aws-samples/baseline-environment-on-aws/blob/main/doc/images/BLEA-GovOverviewSingleAccount.png)
 引用；
@@ -53,22 +58,22 @@
 
 ### 1. Cloud9のセットアップ
 Cloud9のセットアップを実施します。デフォルト設定のまま作成を進めます。
-![cloud9-setting01](pictures/blea-001.png)
+![cloud9-setting01](./pictures/blea-001.png)
 
 まず[GitHub](https://github.com/aws-samples/baseline-environment-on-aws/archive/refs/heads/main.zip)から資材をローカル環境にダウンロードします。
 ダウンロード完了したらCloud9にファイルをアップロードします。
 [File]→[Upload Local Files...]を選択
-![cloud9-setting02](pictures/blea-002.png)
+![cloud9-setting02](./pictures/blea-002.png)
 
 Cloud9環境にダウンロードしたzipファイルをアップロードします。  
 ドラック＆ドロップまたは「Select Files」でzipファイルをアップロードします。
-![cloud9-setting03](pictures/blea-003.png)
+![cloud9-setting03](./pictures/blea-003.png)
 
 zipファイルアップロード後、zipファイルを解凍します。
 ```
 $ unzip /home/ec2-user/environment/baseline-environment-on-aws-main.zip 
 ```
-![cloud9-setting04](pictures/blea-004.png)
+![cloud9-setting04](./pictures/blea-004.png)
 
 手順に沿ってパッケージのインストールなどを実施します。
 ```
@@ -118,17 +123,17 @@ Cloud9はデフォルトで、AWS Managed Temporary Credentials（以降、AMTC�
 詳細については[クラスメソッドさんの記事](https://dev.classmethod.jp/articles/aws-cloud9-aws-managed-temporary-credentials/)が大変わかりやすく整理されていたためそちらをご確認ください。
 
 [Cloud9のマーク]→[Preferrences]→[AWS Settings]→[AWS managed temporary credentials]を無効化します。
-![cloud9-setting](pictures/blea-007.png)
+![cloud9-setting07](./pictures/blea-007.png)
 
 Cloud9のEC2インスタンスにアタッチするIAMロールを作成します。
 IAMロールには、管理者権限（AdministratorAccess）ポリシーを割り当てます。
-![cloud9-setting](pictures/blea-008.png)
+![cloud9-setting08](./pictures/blea-008.png)
 
 Cloud9のEC2インスタンスに作成したIAMロールを割り当てます。
-![cloud9-setting](pictures/blea-009.png)
-![cloud9-setting](pictures/blea-010.png)
+![cloud9-setting09](./pictures/blea-009.png)
+![cloud9-setting10](./pictures/blea-010.png)
 IAMロールの割り当てが完了しました。
-![cloud9-setting](pictures/blea-011.png)
+![cloud9-setting11](./pictures/blea-011.png)
 
 Cloud9上のターミナルでIAMロールが認識されているか確認します。
 ```
@@ -207,7 +212,7 @@ px cdk deploy --all -c environment=dev
 
 最終的に以下のようなCloudFormationスタックが作成されました。  
 （Chatbotのスタック作成で失敗していますが、こちらはcdk.jsonの設定で既存パラメータのままCDKを実行したためになります）
-![cloud9-setting](pictures/blea-013.png)
+![cloud9-setting13](./pictures/blea-013.png)
 
 ### 5. お片付け
 最後に環境の片付けを実施します。cdk destroyを使用してCloudFormationスタックを削除します。
