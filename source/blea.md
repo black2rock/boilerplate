@@ -12,6 +12,10 @@
 - 単一のアカウントをセットアップする シングルアカウント版（Standalone）と、AWS Control Tower をベースとしたマルチアカウント環境をセットアップするマルチアカウント版がある
 - 「ガバナンスベース (Governance Base)」と「ゲストシステム (Guest System)」のCDKテンプレートが提供されている 
 
+![BLEA利用パターン](https://d2908q01vomqb2.cloudfront.net/b3f0c7f6bb763af1be91d9e74eabfeb199dc1f1f/2021/10/28/BLEA-Patterns.png)
+引用；
+[AWS環境にセキュアなベースラインを提供するテンプレート「Baseline Environment on AWS」のご紹介](https://aws.amazon.com/jp/blogs/news/announcing-baseline-environment-on-aws/)
+
 詳細についてはAWSのブログ「[AWS環境にセキュアなベースラインを提供するテンプレート「Baseline Environment on AWS」のご紹介](https://aws.amazon.com/jp/blogs/news/announcing-baseline-environment-on-aws/)」をご確認ください。
 
 
@@ -29,10 +33,6 @@
 |IAM設定まわり（ポリシー、ロールの作成など）|-|
 |Security Hubの設定|-|
 |CloudTrail証跡の作成|-|
-
-![tandalone Governance (with Individual account)](https://github.com/aws-samples/baseline-environment-on-aws/blob/main/doc/images/BLEA-GovOverviewSingleAccount.png)
-引用；
-[baseline-environment-on-aws](https://github.com/aws-samples/baseline-environment-on-aws)
 
 上記から、AWSアカウントで最初に設定することが推奨されるAWS BudgetやCost Exploreを使用したコスト／請求周りの設定や、AWS Artifactを使用した準拠法／管轄裁判所（※）の変更までは、BLEAのガバナンスベースでは設定していないことがわかります。（※AWS アカウント開設直後では、AWS カスタマーアグリメントの準拠法及び管轄裁判所は米国の法律及び裁判所になっています）
 
@@ -114,7 +114,7 @@ $ c9 cdk.json
 続いてCloud9がCDKを実行できるようにアクセス権限の設定を実施します。
 元の手順(README)では、~/.aws/credentialsにシークレットキー等の設定を直書きする手順となっていましたが、ここではIAMロールを使用した設定を行います。
 
-Cloud9はデフォルトで、AWS Managed Temporary Credentials（以降、AMTC）が有効になっています。この設定が有効になっていることで、AWSマネジメントコンソールへログインしたユーザーと同等の権限をもつ一時クレデンシャルキーが自動で発行され、すぐにCloud9上のシェルでAWS CLIを利用可能になります。しかし、AMTCを使用する際にIAM等に対する一部のアクションが制限されているため、ガバナンスベースのCDK適用時にIAM周りの設定に失敗すると思われます。そのため、Cloud9のAMTCを無効化し、IAMロールをCloud9(実体はEC2インスタンス)にアタッチします。
+Cloud9はデフォルトで、AWS Managed Temporary Credentials（以降、AMTC）が有効になっています。この設定が有効になっていることで、AWSマネジメントコンソールへログインしたユーザーと同等の権限をもつ一時クレデンシャルキーが自動で発行され、すぐにCloud9上のシェルでAWS CLIを利用可能になります。しかし、AMTCを使用する際にIAM等に対する一部のアクションが制限されているため、ガバナンスベースのテンプレート適用時にIAM周りの設定に失敗すると思われます。そのため、Cloud9のAMTCを無効化し、IAMロールをCloud9(実体はEC2インスタンス)にアタッチします。
 
 詳細については[クラスメソッドさんの記事](https://dev.classmethod.jp/articles/aws-cloud9-aws-managed-temporary-credentials/)が大変わかりやすく整理されていたためそちらをご確認ください。
 
