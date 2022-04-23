@@ -50,6 +50,7 @@ shiftitはウィンドウ分割ツールです。Windowsライクにウィンド
 
 ### 2. fishの設定
 Mac mini(M1, 2020)では、デフォルトのシェルがzshとなっているのでfishに変更します。
+また、fishでbrewが使用できるようにパスの設定を実施します。
 ````
 % echo $SHELL
 /bin/zsh
@@ -57,7 +58,13 @@ Mac mini(M1, 2020)では、デフォルトのシェルがzshとなっている�
 fish: /opt/homebrew/bin/fish /opt/homebrew/share/man/man1/fish.1                                                             
 % echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells
 % chsh -s /opt/homebrew/bin/fish
-````
+% vim ~/.config/fish/config.fish
+% cat ~/.config/fish/config.fish                                                                                                                                                                                                15.6
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+end
+`````
 
 fish用のパッケージマネージャとしてFisherを使います。
 ```
