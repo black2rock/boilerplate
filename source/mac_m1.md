@@ -18,7 +18,6 @@ Mac miniのセットアップ手順（普段使うツール類を導入するま
 1. brewインストール(Xcodeのインストール含む)
 2. fishの設定
 3. VSCodeの設定
-4. Firefoxの設定
 
 ### 1.brewインストール
 [Homebrew](https://brew.sh/index_ja)に記載されているワンライナーのコマンド実行してインストールします。
@@ -51,7 +50,7 @@ karabiner-elementsはキーバインドをカスタマイズするツールで�
 karabiner-elementsでは、下図のようにコピペがWindowsと同じキー操作となるようにCommandとControlのキー配置を入れ替えます。
 ![karabiner-elements01](/mac_m1/01.png)
 
-ただ、上記設定をしてしまうとウィンドウの切り替えがWindows操作時とは異なってしまうため、Command+TabをControl+Tabに変更します（下図）。ルールについてはインターネットからダンロードできるのでインポート＆有効化します。
+ただ、上記設定をしてしまうとウィンドウの切り替えがWindows操作時とは異なってしまうため、Command+TabをControl+Tabに変更します（下図）。ルールについてはインターネットからダンロードできるのでインポート＆有効化(Enabled)します。
 ![karabiner-elements2](/mac_m1/02.png)
 
 ### 2. fishの設定
