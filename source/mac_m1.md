@@ -38,7 +38,7 @@ Mac miniのセットアップ手順（普段使うツール類を導入するま
 続いてbrew経由で普段使用しているツール類をインストールしていきます。
 ````
 % brew install git fish ghq peco
-% brew install --cask firefox quicksilver visual-studio-code shiftit
+% brew install --cask firefox quicksilver visual-studio-code shiftit karabiner-elements
 ````
 
 fishは普段使用しているシェルになります。詳細は[fish shell導入してみた](https://gitpress.io/u/879/fish)にて紹介しているので割愛します。
@@ -46,7 +46,13 @@ ghqやpecoについてはgit周りの作業改善ツールです。正直使っ�
 Quicksilverはランチャーツールです。MacだとAlfredなどが有名かと思いますが、
 [Apple Silicon MacやmacOS 12 Montereyに対応した多機能ランチャー「Quicksilver v2.0」がリリース](https://applech2.com/archives/20220401-quicksilver-v2-for-mac-now-avalable.html)の記事を見かけ、久しぶりにQuicksilverを使ってみようと思って導入してます（QuicksilverのBezel型のポップアップが好みです。デフォルトはPrimer型になっているのでBezel型に変更してます)  
 shiftitはウィンドウ分割ツールです。Windowsライクにウィンドウを移動させたいことが多いので導入してます。shiftitのデフォルト設定では「Ctrl+Opt+⌘+カーソルキー」という形で若干使いづらいため、「⌘→」で右にウィンドウを移動みたいな形に設定しています。
+karabiner-elementsはキーバインドをカスタマイズするツールです。Windowsキーボード操作に慣れているため、Windowsっぽくキーバインドを変更するために使用します。
 
+karabiner-elementsでは、下図のようにコピペがWindowsと同じキー操作となるようにCommandとControlのキー配置を入れ替えます。
+![karabiner-elements01](/mac_m1/01.png)
+
+ただ、上記設定をしてしまうとウィンドウの切り替えがWindows操作時とは異なってしまうため、Command+TabをControl+Tabに変更します（下図）。ルールについてはインターネットからダンロードできるのでインポート＆有効化します。
+![karabiner-elements2](/mac_m1/02.png)
 
 ### 2. fishの設定
 Mac mini(M1, 2020)では、デフォルトのシェルがzshとなっているのでfishに変更します。
