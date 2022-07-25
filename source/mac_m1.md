@@ -112,10 +112,9 @@ Code->基本設定->設定の「Terminal>Integrated>Default Profile:Osx」のパ
 ## まとめ
 Apple Storeで注文してから約2週間後にMac miniが届いたので、セットアップがてら手順を備忘録として残してみました。メモリとストレージをカスタマイズしたことでAppleの中国支店経由で発送される形になったようですが、コロナ禍で発送にかなりの遅延が発生しているようです（配送予定日より10日程遅れて届きました）。が、やはり新しいマシンはいいですね。とりあえずのセットアップが完了したので、色々試しながらカスタマイズしていきたいと思います。
 
-
 ## 参考
 [ghqでリポジトリ管理とpeco連携で快適git生活](https://qiita.com/strsk/items/9151cef7e68f0746820d)
 
-[Settings Sync](https://code.visualstudio.com/docs/editor/settings-sync)
+[VS Code Settings Sync](https://code.visualstudio.com/docs/editor/settings-sync)
 
 [Apple Silicon MacやmacOS 12 Montereyに対応した多機能ランチャー「Quicksilver v2.0」がリリース](https://applech2.com/archives/20220401-quicksilver-v2-for-mac-now-avalable.html)
