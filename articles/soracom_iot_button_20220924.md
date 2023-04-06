@@ -19,7 +19,7 @@ IoTを使わずとも打刻だけであれば直接LINEに文言やスタンプ�
 
 
 ### SORACOM IoT ボタンとは
-<img src="https://soracom.jp/wp-content/uploads/2019/08/products_soracom-lte-button_01.png" width="320">
+![soracom_button](/image/products_soracom-lte-button_01.png) 
 
 以下は[SORACOM LTE-M Button powered by AWS ](https://soracom.jp/store/5208/)より引用
 > SORACOM LTE-M Button powered by AWSは、3種類のクリックに応じたアクションをクラウド側で設定できる、自分だけのIoTボタンを作れるデバイスです。LTE-M通信を内蔵し、単四電池で駆動しますので、Wi-Fi環境に依存せず、屋外でもご利用いただけます。
