@@ -1,6 +1,6 @@
 ---
 title: "ミルクの打刻にIoTを導入してみた" # 記事のタイトル
-emoji: "☁️" # アイキャッチとして使われる絵文字（1文字だけ）
+emoji: "👶" # アイキャッチとして使われる絵文字（1文字だけ）
 type: "tech" # tech: 技術記事 / idea: アイデア記事
 topics: ["AWS","IoT","soracom","ベビーテック"] # タグ。["markdown", "rust", "aws"]のように指定する
 published: true # 公開設定（falseにすると下書き）
@@ -19,7 +19,7 @@ IoTを使わずとも打刻だけであれば直接LINEに文言やスタンプ�
 
 
 ### SORACOM IoT ボタンとは
-![soracom_button](/image/products_soracom-lte-button_01.png) 
+![soracom_button](/images/products_soracom-lte-button_01.png)
 
 以下は[SORACOM LTE-M Button powered by AWS ](https://soracom.jp/store/5208/)より引用
 > SORACOM LTE-M Button powered by AWSは、3種類のクリックに応じたアクションをクラウド側で設定できる、自分だけのIoTボタンを作れるデバイスです。LTE-M通信を内蔵し、単四電池で駆動しますので、Wi-Fi環境に依存せず、屋外でもご利用いただけます。
@@ -106,7 +106,7 @@ exports.handle = function(e, ctx, cb) {
 
 ### できたもの
 SORACOMボタンを押すと、夫婦のLINEグループに下図のような通知が飛ぶようになりました。
-![line_iot](/image/line_iot_202303.png)
+![line_iot](/images/line_iot_202303.png)
 
 ### かかったコスト
 - 初期費用： 8,778 円　(SORACOM LTE-M Button powered by AWS費用。ボタン代)
